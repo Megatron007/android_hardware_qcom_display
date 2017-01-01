@@ -1,5 +1,11 @@
 #Common headers
-display_top := $(call my-dir)
+common_includes := $(call project-path-for,qcom-display)/libgralloc
+common_includes += $(call project-path-for,qcom-display)/liboverlay
+common_includes += $(call project-path-for,qcom-display)/libcopybit
+common_includes += $(call project-path-for,qcom-display)/libqdutils
+common_includes += $(call project-path-for,qcom-display)/libhwcomposer
+common_includes += $(call project-path-for,qcom-display)/libhdmi
+common_includes += $(call project-path-for,qcom-display)/libqservice
 
 use_hwc2 := false
 ifeq ($(TARGET_USES_HWC2), true)

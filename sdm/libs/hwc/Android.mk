@@ -6,7 +6,11 @@ ifeq ($(use_hwc2),false)
 LOCAL_MODULE                  := hwcomposer.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_RELATIVE_PATH    := hw
 LOCAL_MODULE_TAGS             := optional
-LOCAL_C_INCLUDES              := $(common_includes)
+LOCAL_C_INCLUDES              := $(call project-path-for,qcom-display)/sdm/include/ \
+                                 $(call project-path-for,qcom-display)/libgralloc/ \
+                                 $(call project-path-for,qcom-display)/libqservice/ \
+                                 $(call project-path-for,qcom-display)/libqdutils/ \
+                                 $(call project-path-for,qcom-display)/libcopybit/
 
 LOCAL_CFLAGS                  := -Wno-missing-field-initializers -Wno-unused-parameter \
                                  -std=c++11 -fcolor-diagnostics\
